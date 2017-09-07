@@ -1,5 +1,8 @@
 package tlh.saludo
 
+import org.uqbar.commons.model.annotations.Observable
+
+@Observable
 class Saludo {
 	
 	String nombre
