@@ -1,6 +1,5 @@
 package tlh.saludo
 
-import tlh.saludo
 import org.uqbar.arena.Application
 
 class SaludoApp extends Application {

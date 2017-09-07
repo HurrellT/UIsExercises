@@ -15,28 +15,6 @@ class CrearSaludoWindow extends SimpleWindow<Saludo> {
 		title = "Saludo"
 	}
 	
-	override protected addActions(Panel actionsPanel) {
-		new Label(actionsPanel) => [
-			width = 150
-			value <=> "Nombre"
-		]
-		
-		new TextBox(actionsPanel) => [
-			width = 150
-			value <=> "nombre"
-		]
-		
-		new Label(actionsPanel) => [
-			width = 150
-			value <=> "Apellido"
-		]
-		
-		new TextBox(actionsPanel) => [
-			width = 150
-			value <=> "apellido"
-		]
-	}
-	
 	override protected createFormPanel(Panel panel) {
 		val editorPanel 	= new Panel(panel)
 		editorPanel.layout 	= new ColumnLayout(1)
@@ -45,14 +23,27 @@ class CrearSaludoWindow extends SimpleWindow<Saludo> {
 		
 		new TextBox(editorPanel) => [
 			value <=> "nombre"
+			width = 150
 		]
 		
 		new Label(editorPanel).text = "Apellido"
 		
 		new TextBox(editorPanel) => [
 			value <=> "apellido"
+			width = 150
 		]
 	}
 	
+	override protected addActions(Panel actionsPanel) {
+		new Label(actionsPanel).text = "Hola"
+		
+		new Label(actionsPanel) => [
+			value <=> "nombre"
+		]
+		
+		new Label(actionsPanel) => [
+			value <=> "apellido"
+		]
+	}
 	
 }

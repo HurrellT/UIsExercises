@@ -12,44 +12,13 @@ import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 import org.uqbar.arena.xtend.ArenaXtendExtensions;
 import org.uqbar.lacar.ui.model.ControlBuilder;
+import tlh.saludo.Saludo;
 
 @SuppressWarnings("all")
-public class CrearSaludoWindow /* extends /* SimpleWindow<Saludo> */  */{
-  public CrearSaludoWindow(final WindowOwner parent, final /* Saludo */Object saludo) {
+public class CrearSaludoWindow extends SimpleWindow<Saludo> {
+  public CrearSaludoWindow(final WindowOwner parent, final Saludo saludo) {
     super(parent, saludo);
     this.setTitle("Saludo");
-  }
-  
-  @Override
-  protected void addActions(final Panel actionsPanel) {
-    Label _label = new Label(actionsPanel);
-    final Procedure1<Label> _function = (Label it) -> {
-      it.setWidth(150);
-      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
-      ArenaXtendExtensions.operator_spaceship(_value, "Nombre");
-    };
-    ObjectExtensions.<Label>operator_doubleArrow(_label, _function);
-    TextBox _textBox = new TextBox(actionsPanel);
-    final Procedure1<TextBox> _function_1 = (TextBox it) -> {
-      it.setWidth(150);
-      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
-      ArenaXtendExtensions.operator_spaceship(_value, "nombre");
-    };
-    ObjectExtensions.<TextBox>operator_doubleArrow(_textBox, _function_1);
-    Label _label_1 = new Label(actionsPanel);
-    final Procedure1<Label> _function_2 = (Label it) -> {
-      it.setWidth(150);
-      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
-      ArenaXtendExtensions.operator_spaceship(_value, "Apellido");
-    };
-    ObjectExtensions.<Label>operator_doubleArrow(_label_1, _function_2);
-    TextBox _textBox_1 = new TextBox(actionsPanel);
-    final Procedure1<TextBox> _function_3 = (TextBox it) -> {
-      it.setWidth(150);
-      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
-      ArenaXtendExtensions.operator_spaceship(_value, "apellido");
-    };
-    ObjectExtensions.<TextBox>operator_doubleArrow(_textBox_1, _function_3);
   }
   
   @Override
@@ -63,6 +32,7 @@ public class CrearSaludoWindow /* extends /* SimpleWindow<Saludo> */  */{
     final Procedure1<TextBox> _function = (TextBox it) -> {
       ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
       ArenaXtendExtensions.operator_spaceship(_value, "nombre");
+      it.setWidth(150);
     };
     ObjectExtensions.<TextBox>operator_doubleArrow(_textBox, _function);
     Label _label_1 = new Label(editorPanel);
@@ -71,7 +41,26 @@ public class CrearSaludoWindow /* extends /* SimpleWindow<Saludo> */  */{
     final Procedure1<TextBox> _function_1 = (TextBox it) -> {
       ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
       ArenaXtendExtensions.operator_spaceship(_value, "apellido");
+      it.setWidth(150);
     };
     ObjectExtensions.<TextBox>operator_doubleArrow(_textBox_1, _function_1);
+  }
+  
+  @Override
+  protected void addActions(final Panel actionsPanel) {
+    Label _label = new Label(actionsPanel);
+    _label.setText("Hola");
+    Label _label_1 = new Label(actionsPanel);
+    final Procedure1<Label> _function = (Label it) -> {
+      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
+      ArenaXtendExtensions.operator_spaceship(_value, "nombre");
+    };
+    ObjectExtensions.<Label>operator_doubleArrow(_label_1, _function);
+    Label _label_2 = new Label(actionsPanel);
+    final Procedure1<Label> _function_1 = (Label it) -> {
+      ObservableValue<Control, ControlBuilder> _value = it.<ControlBuilder>value();
+      ArenaXtendExtensions.operator_spaceship(_value, "apellido");
+    };
+    ObjectExtensions.<Label>operator_doubleArrow(_label_2, _function_1);
   }
 }
