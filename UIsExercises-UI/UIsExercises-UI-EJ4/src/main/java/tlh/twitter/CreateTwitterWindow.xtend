@@ -31,7 +31,7 @@ class CreateTwitterWindow extends SimpleWindow<Twitter> {
 	override protected addActions(Panel actionsPanel) {
 				
 		new Label(actionsPanel) => [
-			value <=> "maxLength"
+			value <=> "charsLeft"
 		]
 		
 	}
